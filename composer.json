@@ -1,0 +1,53 @@
+{
+  "name": "imscp/imscp-frontend",
+  "description": "i-MSCP internet Multi-Server Control Panel - FrontEnd",
+  "type": "metapackage",
+  "license": "LGPL-2.1-only",
+  "keywords": [
+    "i-mscp",
+    "frontend"
+  ],
+  "homepage": "https://www.i-mscp.net/",
+  "support": {
+    "issues": "https://youtrack.i-mscp.net/",
+    "source": "https://github.com/i-MSCP/imscp/"
+  },
+  "authors": [
+    {
+      "name": "Laurent Declercq",
+      "email": "l.declercq@nuxwin.com",
+      "homepage": "https://www.i-mscp.net/",
+      "role": "developer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "imscp/imscp-frontend-common": "^1.0.0",
+    "imscp/imscp-frontend-layout": "^1.0.0"
+  },
+  "extra": [],
+  "scripts": {
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "development-disable": "zf-development-mode disable",
+    "development-enable": "zf-development-mode enable",
+    "development-status": "zf-development-mode status",
+    "post-create-project-cmd": [
+      "@development-enable"
+    ],
+    "serve": "php -S 0.0.0.0:8080 -t public public/index.php",
+    "test": "phpunit"
+  },
+  "require-dev": {
+  },
+  "config": {
+    "classmap-authoritative": true,
+    "discard-changes": true,
+    "htaccess-protect": true,
+    "optimize-autoloader": true,
+    "apcu-autoloader": false,
+    "preferred-install": "dist",
+    "process-timeout": 2000
+  }
+}
