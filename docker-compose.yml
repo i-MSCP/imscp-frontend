@@ -1,0 +1,20 @@
+version: '2'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public:/public
+      - .docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - bridged-network
+  php-fpm:
+    image: php:7.1-fpm
+    volumes:
+      - ./public:/public
+    networks:
+      - bridged-network
+networks:
+    bridged-network:
+      driver: bridge

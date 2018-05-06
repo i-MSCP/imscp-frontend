@@ -1,3 +1,6 @@
+# Phpstorm
+.idea/
+
 # Composer files
 composer.phar
 vendor/
@@ -5,21 +8,22 @@ vendor/
 # Local configs
 config/autoload/*.local.php
 
-# Binary gettext files
-*.mo
+# Development config
+config/development.config.php
 
 # Data
-data/logs/
-data/cache/
-data/sessions/
-data/tmp/
-temp/
+data/cache/*
+!data/cache/.gitkeep
+data/logs/*
+!data/logs/.gitkeep
+data/persistent/*
+!data/persistent/.gitkeep
+data/sessions/*
+!data/sessions/.gitkeep
+data/tmp/*
+!data/tmp/.gitkeep
 
-#Doctrine 2
-data/DoctrineORMModule/Proxy/
-data/DoctrineORMModule/cache/
+module/
 
-
-# Legacy ZF1
-demos/
-extras/documentation
+# Unit testing
+phpunit.xml
