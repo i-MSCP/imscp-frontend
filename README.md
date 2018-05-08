@@ -14,15 +14,28 @@ Service Providers (ISPs) and IT professionals.
 * [i-MSCP Forums](https://i-mscp.net/index.php/BoardList/)
 * [i-MSCP Documentation](https://wiki.i-mscp.net/)
 
+## Requirements
+  
+Please see the [composer.json](composer.json) file.
+
+## Installation
+
+Run the following `composer` command:
+
+```console
+$ composer install --no-interaction
+```
+
 ## Development
 
 For development, we use [docker-compose](https://docs.docker.com/compose/);
 make sure you have both that and Docker installed on your machine.
 
-Launch docker containers:
+Build and launch docker containers:
 
 ```console
-$ docker-compose up -d
+$ sudo docker-compose build
+$ sudo docker-compose up -d
 ```
 
 You can then browse to `http://localhost:8080`, and any changes you make in the
